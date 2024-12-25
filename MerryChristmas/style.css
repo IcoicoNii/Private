@@ -8,7 +8,7 @@
 }
 
 body{
-    margin: 10px;
+    margin: 40px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,8 +17,8 @@ body{
 
 .container {
     /* border: solid; */
-    width: 80%;
-    height: 700px;
+    width: auto;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
