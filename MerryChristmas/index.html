@@ -73,6 +73,8 @@
             background-color: #F1EDE9;
         }
 
+
+
         .top {
             width: 100%;
             height: 50px;
@@ -146,8 +148,39 @@
             animation-iteration-count: infinite;
         }
 
-        span {
+        .gold {
             color: #d4af37;
+        }
+
+        @keyframes blur {
+            0% {
+                filter: blur(5px);
+            }
+
+            20% {
+                filter: blur(4px);
+            }
+
+            40% {
+                filter: blur(3px);
+            }
+
+            60% {
+                filter: blur(2px);
+            }
+
+            80% {
+                filter: blur(1px);
+            }
+
+            100% {
+                filter: blur(0px);
+            }
+        }
+
+        .blur {
+            animation-name: blur;
+            animation-duration: 10s;
         }
 
         ::-webkit-scrollbar {
@@ -155,7 +188,7 @@
         }
     </style>
 
-    
+
 
 </head>
 
@@ -165,7 +198,7 @@
 
         <div class="notepad" id="notepad">
             <div class="top">
-                <h1><span>Merry Christmas</span>, Mandy</h1>
+                <h1><span class="gold">Merry Christmas</span>, Mandy</h1>
                 <button onclick="Close()">X</button>
             </div>
             <div class="paper" contenteditable="false">
@@ -201,7 +234,7 @@
 
         <div class="notepad2" id="notepad2">
             <div class="top">
-                <h1><span>Kunyare Di Mo Kilala</span></h1>
+                <h1><span class="gold">Kunyare Di Mo Kilala</span></h1>
                 <button onclick="Close()">X</button>
             </div>
             <div class="paper" contenteditable="false">
@@ -215,7 +248,7 @@
                 <br><br>
                 Who knows when will I ever tell you this again, but who cares, this is long overdue.<br><br>
 
-                I love you.<br><br>
+                <span class="blur" id="ily">I love you.</span><br><br>
 
                 Merry Christmas<br>
                 Happy New Year
@@ -236,6 +269,7 @@
         let choco = document.getElementById("chocolate");
         let note = document.getElementById("notepad");
         let note2 = document.getElementById("notepad2");
+        let ily = document.getElementsByClassName("blur");
 
         function Reveal() {
             note.style.opacity = 100;
@@ -260,7 +294,10 @@
             note.style.display = "inline"
             note2.style.display = "none";
             note1.style.opacity = 100;
+        }
 
+        function ILY() {
+            ily.style.filter = blur(0);
         }
     </script>
 </body>
